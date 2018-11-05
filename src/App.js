@@ -23,10 +23,12 @@ class App extends Component {
         });
   }
 
-  updateClients1(id, name, country){
+  updateClients1=(id, name, country)=>{
     let clients = [...this.state.clients]
-    clients.find
-
+    let pos = clients.map(function(c) { return c._id; }).indexOf(id);
+    clients[pos].name = name
+    clients[pos].country = country
+    this.setState({clients:clients})
   }
 
 
@@ -35,7 +37,7 @@ class App extends Component {
       <Router>
         <div className="App">
           <BasicNav />
-          <Route exact path="/clients" render={() => <ClientLink clients={this.state.clients} />} />
+          <Route exact path="/clients" render={() => <ClientLink clients={this.state.clients} updateClients1={this.updateClients1} />} />
           <Route exact path="/actions" render={() => <ActionsLink clients={this.state.clients} />} />
         </div>
       </Router>

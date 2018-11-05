@@ -7,7 +7,7 @@ class ClientLink extends Component {
         return (
             <div>
             <NavClients />
-            <ClientData clients={this.props.clients} />
+            <ClientData clients={this.props.clients} updateClients1={this.props.updateClients1} />
             </div>
             )
     }

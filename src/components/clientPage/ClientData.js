@@ -59,6 +59,7 @@ class ClientData extends Component {
                         updateFirstName={this.updateFirstName}
                         updateSurName={this.updateSurName}
                         updateCountry={this.updateCountry}
+                        updateClients1={this.props.updateClients1}
                     />
                 </div>
             )

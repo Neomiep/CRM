@@ -17,17 +17,20 @@ class ClientModal extends Component {
     updateClientDetails=()=>{
         if (this.props.firstName !== "" && this.props.surName !== '' && this.props.country !== '' && this.props.id !=='') {
             
+            let name = this.props.firstName + " " + this.props.surName
+
             axios.post('http://localhost:4000/clientData', {
                 name: this.props.firstName + " " + this.props.surName,
                 country: this.props.country,
                 id: this.props.id
-            }).then(function (res) {
+            }).then((res) => {
                 console.log(res);
-            }).catch(function (err) {
+                this.props.updateClients1(this.props.id, name, this.props.country)
+                this.onCloseModal()
+            }).catch((err) => {
                 console.log(err);
+                this.onCloseModal()
             });
-            
-            this.onCloseModal()
         }
         else {
             this.onCloseModal()
