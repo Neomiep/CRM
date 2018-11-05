@@ -1,14 +1,108 @@
 body {
   margin: 0;
   padding: 0;
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
-    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
-    sans-serif;
+  font-family: 'Montserrat', sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  font-size:9px;
 }
 
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
+}
+
+.linksNav{
+  background-color: rgb(19, 29, 25);
+}
+.clientsNav{
+  background-color: rgb(235, 190, 42);
+}
+.client{
+  margin:2%;
+}
+.navv{
+  padding:7px;
+  text-align:left;
+}
+.navLink{
+  text-decoration:none;
+  color:rgb(240, 234, 234);
+  padding:6px
+}
+.styles_modal__gNwvD{
+  height:45%;
+  width:38%;
+  font-size:10px;
+  background-color: rgb(19, 18, 18);
+  color:white;
+  position:relative;
+}
+.inputModal{
+  background: transparent;
+  border: none;
+  border-bottom: 1px solid #000000;
+  display:inline-block;
+  width:50%;
+  margin-left:3%;
+  color:white;
+  border-color: white
+}
+.modalText{
+  width:30%;
+  display: inline-block
+}
+.modalItems{
+margin:5px
+}
+.navLink:hover{
+  background-color: rgb(130, 138, 134)
+}
+.clientAttributes{
+  position:relative;
+  width:13%;
+  display:inline-block;
+}
+.actionslink{
+  text-align: left;
+  font-size: 11px;
+  margin:2%;
+}
+.actionSpan{
+  width:14%;
+  display:inline-block;
+  margin-left:3%;
+  padding:4px;
+}
+.actionInput{
+  width:14%;
+  margin-right:5px;
+  display:inline-block;
+}
+input{
+  height:15px;
+}
+.actionbutton{
+  border:none;
+  background-color: white;
+  color:rgb(245, 187, 27)
+}
+.addSpan{
+  width:14%;
+  display:inline-block;
+  padding:4px;
+}
+.addClientBtn{
+  border:none;
+  background-color: rgb(231, 173, 12);
+  margin:0.5%;
+  padding:1%;
+}
+.updateButton{
+  border:none;
+  background-color: rgb(231, 173, 12);
+  position: relative;
+  margin-left: 25%;
+  width: 50%;
+  height: 18%;
 }

@@ -1,26 +1,44 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
+import { BrowserRouter as Router, Route } from 'react-router-dom'
+import BasicNav from "./components/BasicNav"
+import ClientLink from './components/clientPage/ClientLink'
+import ActionsLink from './components/actionsPage/ActionsLink';
 import './App.css';
+import axios from 'axios'
 
 class App extends Component {
+  constructor() {
+    super()
+    this.state = {
+      clients: ''
+    }
+  }
+
+   componentDidMount=()=> {
+      axios.get('http://localhost:4000/clientData')
+        .then((res)=>{
+          this.setState({ clients: res.data })
+        })
+        .catch(function (err) {
+        });
+  }
+
+  updateClients1(id, name, country){
+    let clients = [...this.state.clients]
+    clients.find
+
+  }
+
+
   render() {
     return (
-      <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <p>
-            Edit <code>src/App.js</code> and save to reload.
-          </p>
-          <a
-            className="App-link"
-            href="https://reactjs.org"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Learn React
-          </a>
-        </header>
-      </div>
+      <Router>
+        <div className="App">
+          <BasicNav />
+          <Route exact path="/clients" render={() => <ClientLink clients={this.state.clients} />} />
+          <Route exact path="/actions" render={() => <ActionsLink clients={this.state.clients} />} />
+        </div>
+      </Router>
     );
   }
 }
